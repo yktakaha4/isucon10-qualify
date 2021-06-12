@@ -109,15 +109,13 @@
     path: *myCnf
     state: absent
 
-- name: Copy mysqld.conf
+- name: set max_allowed_packet
   become: yes
   become_user: root
-  copy:
-    src: "mysqld.cnf"
-    dest: "/etc/mysql/mysql.conf.d/mysqld.cnf"
-    owner: "root"
-    group: "root"
-    mode: "0644"
+  lineinfile:
+    path: "/etc/mysql/mysql.conf.d/mysqld.cnf"
+    regexp: "^(# *|)max_allowed_packet"
+    line: "max_allowed_packet	= 31M"
 
 - name: Copy my.conf
   become: yes
