@@ -111,7 +111,7 @@
 - name: Install Go 1.14.7 
   become: yes
   become_user: isucon
-  command: /tmp/xbuild/go-install 1.14.7 /home/isucon/local/go
+  command: /tmp/xbuild/go-install 1.14.7 /home/isucon/local/go {{ ansible_system | lower }} {{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}
 
 - name: Add PATH for Go
   become: yes
