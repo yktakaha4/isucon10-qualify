@@ -76,12 +76,7 @@
   become_user: root
   apt:
     name:
-    - mysql-server-5.7
-    - mysql-server-core-5.7
-    - mysql-common
-    - mysql-client-5.7
-    - mysql-client-core-5.7
-    - libmysqld-dev
+    - mysql-server
     update_cache: yes
 
 
