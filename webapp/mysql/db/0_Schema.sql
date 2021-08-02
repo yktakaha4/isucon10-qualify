@@ -37,6 +37,5 @@ CREATE TABLE isuumo.chair
     stock       INTEGER         NOT NULL
 );
 
-CREATE INDEX chair_stock ON isuumo.chair (stock);
-
-CREATE INDEX chair_price ON isuumo.chair (price);
+CREATE INDEX chair_stock_id ON isuumo.chair (stock, id);
+CREATE INDEX estate_rent_id ON isuumo.estate (rent, id);
